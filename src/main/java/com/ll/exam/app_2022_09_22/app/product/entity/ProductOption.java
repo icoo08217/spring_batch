@@ -34,4 +34,9 @@ public class ProductOption  extends BaseEntity {
         this.size = size;
     }
 
+    public boolean isOrderable(int quantity) {
+        if (isSoldOut() == false ) return true;
+
+        return getStockQuantity() >= quantity;
+    }
 }
