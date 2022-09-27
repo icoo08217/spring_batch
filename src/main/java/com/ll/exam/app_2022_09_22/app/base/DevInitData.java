@@ -29,9 +29,9 @@ public class DevInitData {
             Member member3 = memberService.join("user3", password, "user3@test.com");
             Member member4 = memberService.join("user4", password, "user4@test.com");
 
-            memberService.addCash(member1, 10_000);
-            memberService.addCash(member1, 20_000);
-            memberService.addCash(member1, -5_000);
+            memberService.addCash(member1, 10_000 , "충전__무통장입금");
+            memberService.addCash(member1, 20_000, "충전__무통장입금");
+            memberService.addCash(member1, -5_000, "출금__일반");
 
             long restCash = memberService.getRestCash(member1);
             log.debug("member1 restCash : " + restCash);
