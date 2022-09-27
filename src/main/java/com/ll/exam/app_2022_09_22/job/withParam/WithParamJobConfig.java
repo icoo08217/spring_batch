@@ -40,6 +40,7 @@ public class WithParamJobConfig {
     @StepScope
     public Tasklet withParamStep1Tasklet(@Value("#{jobParameters['name']}") String name,
                                          @Value("#{jobParameters['age']}") Long age) {
+
         return (contribution, chunkContext) -> {
             log.debug("name: {}, age: {}" , name , age);
 
@@ -47,3 +48,9 @@ public class WithParamJobConfig {
         };
     }
 }
+
+// 스프링 배치 잡 파라미터 타입
+// Double
+//Long
+//String
+//Date
